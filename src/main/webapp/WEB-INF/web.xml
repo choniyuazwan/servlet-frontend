@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>JspFilter</filter-name>
+  	<display-name>JspFilter</display-name>
+  	<description></description>
+  	<filter-class>com.sti.bootcamp.servlet.security.JspFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>AuthenticationFilter</filter-name>
+  	<display-name>AuthenticationFilter</display-name>
+  	<description></description>
+  	<filter-class>com.sti.bootcamp.servlet.security.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>JspFilter</filter-name>
+  	<url-pattern>*.jspx</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>AuthenticationFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- <servlet>
+  	<servlet-name>HelloController</servlet-name>
+  	<display-name>HelloController</display-name>
+  	<description></description>
+  	<servlet-class>com.sti.bootcamp.servlet.controller.HelloController</servlet-class>
+  </servlet> -->
+  <servlet>
+  	<servlet-name>GeneralController</servlet-name>
+  	<display-name>GeneralController</display-name>
+  	<description></description>
+  	<servlet-class>com.sti.bootcamp.servlet.controller.GeneralController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<display-name>Login</display-name>
+  	<description></description>
+  	<servlet-class>com.sti.bootcamp.servlet.controller.Login</servlet-class>
+  </servlet>
+  <!-- <servlet-mapping>
+  	<servlet-name>HelloController</servlet-name>
+  	<url-pattern>/HelloController</url-pattern>
+  </servlet-mapping> -->
+  <servlet-mapping>
+  	<servlet-name>GeneralController</servlet-name>
+  	<url-pattern>/general</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+</web-app>
