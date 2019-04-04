@@ -3,55 +3,92 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-  <filter>
-  	<filter-name>JspFilter</filter-name>
-  	<display-name>JspFilter</display-name>
-  	<description></description>
-  	<filter-class>com.sti.bootcamp.servlet.security.JspFilter</filter-class>
-  </filter>
-  <filter>
-  	<filter-name>AuthenticationFilter</filter-name>
-  	<display-name>AuthenticationFilter</display-name>
-  	<description></description>
-  	<filter-class>com.sti.bootcamp.servlet.security.AuthenticationFilter</filter-class>
-  </filter>
-  <filter-mapping>
-  	<filter-name>JspFilter</filter-name>
-  	<url-pattern>*.jspx</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>AuthenticationFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
-  </filter-mapping>
-  <!-- <servlet>
-  	<servlet-name>HelloController</servlet-name>
-  	<display-name>HelloController</display-name>
-  	<description></description>
-  	<servlet-class>com.sti.bootcamp.servlet.controller.HelloController</servlet-class>
-  </servlet> -->
-  <servlet>
-  	<servlet-name>GeneralController</servlet-name>
-  	<display-name>GeneralController</display-name>
-  	<description></description>
-  	<servlet-class>com.sti.bootcamp.servlet.controller.GeneralController</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Login</servlet-name>
-  	<display-name>Login</display-name>
-  	<description></description>
-  	<servlet-class>com.sti.bootcamp.servlet.controller.Login</servlet-class>
-  </servlet>
-  <!-- <servlet-mapping>
-  	<servlet-name>HelloController</servlet-name>
-  	<url-pattern>/HelloController</url-pattern>
-  </servlet-mapping> -->
-  <servlet-mapping>
-  	<servlet-name>GeneralController</servlet-name>
-  	<url-pattern>/general</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/login</url-pattern>
-  </servlet-mapping>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>JspFilter</filter-name>
+		<display-name>JspFilter</display-name>
+		<description></description>
+		<filter-class>com.sti.bootcamp.servlet.security.JspFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<display-name>AuthenticationFilter</display-name>
+		<description></description>
+		<filter-class>com.sti.bootcamp.servlet.security.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>JspFilter</filter-name>
+		<url-pattern>*.jspx</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- <servlet> <servlet-name>HelloController</servlet-name> <display-name>HelloController</display-name> 
+		<description></description> <servlet-class>com.sti.bootcamp.servlet.controller.HelloController</servlet-class> 
+		</servlet> -->
+	<servlet>
+		<servlet-name>GeneralController</servlet-name>
+		<display-name>GeneralController</display-name>
+		<description></description>
+		<servlet-class>com.sti.bootcamp.servlet.controller.GeneralController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<display-name>Login</display-name>
+		<description></description>
+		<servlet-class>com.sti.bootcamp.servlet.controller.Login</servlet-class>
+	</servlet>
+	<!-- <servlet-mapping> <servlet-name>HelloController</servlet-name> <url-pattern>/HelloController</url-pattern> 
+		</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>GeneralController</servlet-name>
+		<url-pattern>/general</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!-- by default, spring akan mencari file xml di WEB-INF dengan nama {servlet-name}-servlet.xml -->
+		<servlet-name>spring</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>WEB-INF/*-context.xml</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>FirstServlet</servlet-name>
+		<display-name>FirstServlet</display-name>
+		<description></description>
+		<servlet-class>com.sti.bootcamp.servlet.controller.FirstServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SecondServlet</servlet-name>
+		<display-name>SecondServlet</display-name>
+		<description></description>
+		<servlet-class>com.sti.bootcamp.servlet.controller.SecondServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/welcome.jsp</url-pattern>
+		<url-pattern>/welcome-message.jsp</url-pattern>
+		<url-pattern>/index.jsp</url-pattern>
+		<url-pattern>/welcome.html</url-pattern>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/FirstServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SecondServlet</servlet-name>
+		<url-pattern>/SecondServlet</url-pattern>
+	</servlet-mapping>
+
 </web-app>
