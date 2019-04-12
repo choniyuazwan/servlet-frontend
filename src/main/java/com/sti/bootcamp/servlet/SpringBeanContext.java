@@ -22,25 +22,6 @@ public class SpringBeanContext {
 	}
 	
 	@Bean
-	public DbUtil dbUtil() {
-		return new DbUtil();
-	}
-	
-	@Bean
-	public Customer customer() {
-		Customer customer = new Customer();
-		customer.setCustomerNumber(3);
-		customer.setFirstName("Fauzy");
-		return customer;
-	}
-	
-	@Bean
-	@Scope(value="singleton")
-	public CounterUtil counterUtil() {
-		return new CounterUtil();
-	}
-	
-	@Bean
 	public CustomerDao customerDao() {
 		return new CustomerDaoWsImpl();
 	}

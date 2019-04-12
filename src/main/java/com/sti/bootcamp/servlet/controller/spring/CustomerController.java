@@ -1,6 +1,5 @@
 package com.sti.bootcamp.servlet.controller.spring;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -10,22 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sti.bootcamp.servlet.CounterUtil;
 import com.sti.bootcamp.servlet.dao.CustomerDao;
 import com.sti.bootcamp.servlet.model.Customer;
 
 @Controller
 public class CustomerController {
-	@Autowired
-	private CounterUtil counterUtil;
-
 	@Autowired(required=false)
 	private Customer customer;
 	
@@ -61,20 +54,12 @@ public class CustomerController {
 		return "customer";
 	}
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public CounterUtil getCounterUtil() {
-		return counterUtil;
-	}
-
-	public void setCounterUtil(CounterUtil counterUtil) {
-		this.counterUtil = counterUtil;
-	}
+//	public Customer getCustomer() {
+//		return customer;
+//	}
+//
+//	public void setCustomer(Customer customer) {
+//		this.customer = customer;
+//	}
 	
 }
