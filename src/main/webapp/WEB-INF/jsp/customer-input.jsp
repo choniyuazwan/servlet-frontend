@@ -11,12 +11,12 @@
 		<tr>
 			<td>First Name</td>
 			<td>:</td>
-			<td><input type="text" name="firstName" /> </td>
+			<td><input type="text" name="firstname" /> </td>
 		</tr>
 		<tr>
 			<td>Last Name</td>
 			<td>:</td>
-			<td><input type="text" name="lastName" /> </td>
+			<td><input type="text" name="lastname" /> </td>
 		</tr>
 		<tr>
 			<td>Username</td>
@@ -24,14 +24,9 @@
 			<td><input type="text" name="username" /> </td>
 		</tr>
 		<tr>
-			<td>Phone Type</td>
+			<td>Password</td>
 			<td>:</td>
-			<td><input type="text" name="phoneType" /> </td>
-		</tr>
-		<tr>
-			<td>Phone Number</td>
-			<td>:</td>
-			<td><input type="text" name="phoneNumber" /> </td>
+			<td><input type="text" name="password" /> </td>
 		</tr>
 		<tr>
 			<td>

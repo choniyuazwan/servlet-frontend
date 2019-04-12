@@ -46,7 +46,8 @@ public class CustomerController {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
 		java.util.Date date = sdf1.parse("29-11-1954");
 		java.sql.Date sqlStartDate = new java.sql.Date(date.getTime());
-		customer.setBirthDate(sqlStartDate);
+		String dateString = sdf1.format(sqlStartDate);
+		customer.setBirthdate(dateString);
 		
 		Customer savedCustomer = customerDao.save(customer);
 		modelMap.addAttribute("data", savedCustomer);

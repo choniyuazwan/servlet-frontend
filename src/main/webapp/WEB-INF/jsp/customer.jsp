@@ -12,17 +12,17 @@
 			<tr>
 				<td>Customer Number</td>
 				<td>:</td>
-				<td>${data.customerNumber}</td>
+				<td>${data.cif}</td>
 			</tr>
 			<tr>
 				<td>First Name</td>
 				<td>:</td>
-				<td>${data.firstName}</td>
+				<td>${data.firstname}</td>
 			</tr>
 			<tr>
 				<td>Last Name</td>
 				<td>:</td>
-				<td>${data.lastName}</td>
+				<td>${data.lastname}</td>
 			</tr>
 			<tr>
 				<td>Username</td>

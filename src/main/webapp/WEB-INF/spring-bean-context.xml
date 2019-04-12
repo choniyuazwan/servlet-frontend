@@ -20,8 +20,8 @@
 	</bean>
 	
 	<bean id="customerBean" class="com.sti.bootcamp.servlet.model.Customer">
-		<property name="customerNumber" value="2" />
-		<property name="firstName" value="Azwan" />
+		<property name="cif" value="2" />
+		<property name="firstname" value="Azwan" />
 	</bean>
 	
 	<bean id="counterBean" class="com.sti.bootcamp.servlet.CounterUtil" scope="prototype">

@@ -29,7 +29,7 @@ public class CustomerDaoWsImpl implements CustomerDao {
 		List<Customer> list=null;
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String getCustomersUrl = "http://localhost:8180/customers";//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
+		String getCustomersUrl = "http://localhost:8080/customers";//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
 
 		//contoh menggunakan getForEntity --> otomatis menggunakan method GET
 		ResponseEntity<String> response = restTemplate.getForEntity(getCustomersUrl, String.class);
@@ -56,11 +56,11 @@ public class CustomerDaoWsImpl implements CustomerDao {
 	}
 
 	@Override
-	public Customer getById(int customerNumber) {
+	public Customer getById(int cif) {
 		Customer customer = null;
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String getCustomerUrl = String.format("http://localhost:8180/customer/%s", customerNumber);//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
+		String getCustomerUrl = String.format("http://localhost:8080/customer/%s", cif);//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
 		
 		//contoh menggunakan exchange --> HTTP method dapat disesuaikan
 		ResponseEntity<CommonResponse<Customer>> response = restTemplate.exchange(
@@ -91,7 +91,7 @@ public class CustomerDaoWsImpl implements CustomerDao {
 		Customer savedCustomer = null;
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String postCustomerUrl = "http://localhost:8180/customer";//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
+		String postCustomerUrl = "http://localhost:8080/customer";//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
 		
 		//contoh menggunakan postForEntity, silahkan explore lebih lanjut untuk metode2 lain seperti postForObject, postForLocation
 		ResponseEntity<String> response = restTemplate.postForEntity(URI.create(postCustomerUrl), customer, String.class);
@@ -123,7 +123,7 @@ public class CustomerDaoWsImpl implements CustomerDao {
 		Customer deletedCustomer = null;
 		
 		RestTemplate restTemplate = new RestTemplate();
-		String getCustomerUrl = String.format("http://localhost:8180/customer/%s", customer.getCustomerNumber());//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
+		String getCustomerUrl = String.format("http://localhost:8080/customer/%s", customer.getCif());//untuk sample masih hardcode, untuk real project sebaiknya dibuatkan di properties atau enum
 		
 		//contoh menggunakan exchange --> HTTP method dapat disesuaikan
 		ResponseEntity<CommonResponse<Customer>> response = restTemplate.exchange(

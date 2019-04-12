@@ -10,10 +10,12 @@
 		<table>
 			<c:forEach var="cus" items="${data}">
 				<tr>
-					<td>${cus.customerNumber}</td>
-					<td>${cus.firstName}</td>
-					<td>${cus.lastName}</td>
+					<td>${cus.cif}</td>
+					<td>${cus.firstname}</td>
+					<td>${cus.lastname}</td>
 					<td>${cus.username}</td>
+					<td>${cus.birthdate}</td>
+					<td>${cus.password}</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -14,8 +14,8 @@
 			Customer customer = (Customer)request.getAttribute("customer");
 			
 		%>
-		<%= customer.getFirstName() %>
-		[<%= customer.getCustomerNumber() %>]
+		<%= customer.getFirstname() %>
+		[<%= customer.getCif() %>]
 	</h3>
 </body>
 </html>
