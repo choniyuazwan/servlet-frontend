@@ -54,13 +54,4 @@ public class CustomerController {
 		modelMap.addAttribute("message", "success created");
 		return "customer";
 	}
-
-//	public Customer getCustomer() {
-//		return customer;
-//	}
-//
-//	public void setCustomer(Customer customer) {
-//		this.customer = customer;
-//	}
-	
 }

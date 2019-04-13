@@ -20,6 +20,11 @@
 				<td>${data.firstname}</td>
 			</tr>
 			<tr>
+				<td>Birth Date</td>
+				<td>:</td>
+				<td>${data.birthdate}</td>
+			</tr>
+			<tr>
 				<td>Last Name</td>
 				<td>:</td>
 				<td>${data.lastname}</td>
